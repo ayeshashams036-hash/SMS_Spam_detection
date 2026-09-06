@@ -38,7 +38,7 @@ if st.button("Check SMS"):
     else:
         processed_message = transform_text(message)
 
-        message_vector = tfidf.transform([processed_message])
+        message_vector = tfidf.transform([processed_message]).toarray()
 
         prediction = model.predict(message_vector)[0]
 
